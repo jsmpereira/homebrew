@@ -1,9 +1,9 @@
 require 'formula'
 
 class Memcached < Formula
-  url "http://memcached.googlecode.com/files/memcached-1.4.5.tar.gz"
+  url "http://memcached.googlecode.com/files/memcached-1.4.6.tar.gz"
   homepage 'http://www.danga.com/memcached/'
-  sha1 'c7d6517764b82d23ae2de76b56c2494343c53f02'
+  sha1 '56c9cc0f7d234e90bb7b6459e0eda864b05021a7'
 
   depends_on 'libevent'
 
@@ -21,6 +21,7 @@ class Memcached < Formula
     system "make install"
 
     (prefix+'com.danga.memcached.plist').write startup_plist
+    (prefix+'com.danga.memcached.plist').chmod 0644
   end
 
   def caveats; <<-EOS.undent
